@@ -6,11 +6,26 @@ import { generatePalette } from "./colorHelpers";
 import { render } from "@testing-library/react";
 
 class App extends Component {
+  findPalette(id) {
+    return seedColors.find(function(palette) {
+      return palette.id === id;
+    });
+  }
   render() {
     return (
       <Switch>
         <Route exact path="/" render={() => <h1>Hi</h1>} />
-        <Route exact path="/palette/:id" render={() => <h1>lolo</h1>} />
+        <Route
+          exact
+          path="/palette/:id"
+          render={routeProps => (
+            <Palette
+              palette={generatePalette(
+                this.findPalette(routeProps.match.params.id)
+              )}
+            />
+          )}
+        />
       </Switch>
       // <div>
       //   <Palette palette={generatePalette(seedColors[4])} />
