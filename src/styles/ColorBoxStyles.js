@@ -20,7 +20,7 @@ export default {
     },
     [sizes.down("md")]: {
       width: "calc(100%  /3)",
-      height: props => (props.showingFullPalette ? "13%" : "26%")
+      height: props => (props.showingFullPalette ? "12.5%" : "25%")
     },
     [sizes.down("sm")]: {
       width: "50%",
@@ -125,7 +125,10 @@ export default {
       textAlign: "center",
       marginBottom: "0",
       padding: "1rem",
-      textTransform: "uppercase"
+      textTransform: "uppercase",
+      [sizes.down("xs")]: {
+        fontSize: "5rem"
+      }
     },
     "& p": {
       fontSize: "2rem",
