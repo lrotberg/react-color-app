@@ -1,11 +1,19 @@
 import sizes from "./sizes";
+import bg from "./bg.svg";
 const styles = {
   root: {
-    backgroundColor: "blue",
     height: "100vh",
     display: "flex",
     alignItems: "flex-start",
-    justifyContent: "center"
+    justifyContent: "center",
+    /* background by SVGBackgrounds.com */
+    backgroundColor: "#160599",
+    backgroundImage: `url(${bg})`,
+    backgroundAttachment: "fixed",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
+    overflow: "scroll"
   },
   container: {
     width: "60%",
@@ -44,6 +52,9 @@ const styles = {
       gridTemplateColumns: "repeat(1, 100%)",
       gridGap: "1rem"
     }
+  },
+  heading: {
+    fontSize: "2rem"
   }
 };
 
