@@ -1,5 +1,14 @@
 import sizes from "./sizes";
-export default {
+const styles = {
+  "@global": {
+    ".fade-exit": {
+      opacity: 1
+    },
+    ".fade-exit-active": {
+      opacity: 0,
+      transition: "opacity 500ms ease-out"
+    }
+  },
   Palette: {
     height: "100vh",
     display: "flex",
@@ -55,3 +64,5 @@ export default {
     }
   }
 };
+
+export default styles;
