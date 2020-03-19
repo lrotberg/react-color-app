@@ -1,6 +1,13 @@
 import sizes from "./sizes";
 const styles = {
   "@global": {
+    ".fade-enter": {
+      opacity: 0
+    },
+    ".fade-enter-active": {
+      opacity: 1,
+      transition: "opacity 500ms ease-in-out"
+    },
     ".fade-exit": {
       opacity: 1
     },
