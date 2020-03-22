@@ -42,6 +42,7 @@ class App extends Component {
     );
   }
   render() {
+    const { palettes } = this.state;
     return (
       <Route
         render={({ location }) => (
@@ -55,7 +56,7 @@ class App extends Component {
                     <Page>
                       <NewPaletteForm
                         savePalette={this.savePalette}
-                        palettes={this.state.palettes}
+                        palettes={palettes}
                         {...routeProps}
                       />
                     </Page>
@@ -81,7 +82,7 @@ class App extends Component {
                   render={routeProps => (
                     <Page>
                       <PaletteList
-                        palettes={this.state.palettes}
+                        palettes={palettes}
                         {...routeProps}
                         deletePalette={this.deletePalette}
                       />
