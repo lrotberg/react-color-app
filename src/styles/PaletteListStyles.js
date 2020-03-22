@@ -46,6 +46,9 @@ const styles = {
     "& a": {
       textDecoration: "none",
       color: "white"
+    },
+    "& button": {
+      color: "white"
     }
   },
   palettes: {

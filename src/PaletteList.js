@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Avatar from "@material-ui/core/Avatar";
@@ -43,14 +44,17 @@ class PaletteList extends Component {
     this.closeDialog();
   }
   render() {
-    const { palettes, classes } = this.props;
+    const { palettes, classes, loadSeedPalettes } = this.props;
     const { openDeleteDialog } = this.state;
     return (
       <div className={classes.root}>
         <div className={classes.container}>
           <nav className={classes.nav}>
             <h1 className={classes.heading}>React Colors</h1>
-            <Link to="/palette/new">Create Palette</Link>
+            <div>
+              <Button onClick={loadSeedPalettes}>Load Seed Palettes</Button>
+              <Link to="/palette/new">Create Palette</Link>
+            </div>
           </nav>
           <TransitionGroup className={classes.palettes}>
             {palettes.map(palette => (
