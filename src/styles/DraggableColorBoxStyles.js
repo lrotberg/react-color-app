@@ -12,7 +12,7 @@ const styles = {
     marginBottom: "-5.5px",
     "&:hover svg": {
       color: "white",
-      transform: " scale(1.5)"
+      transform: " scale(1.6)"
     },
     [sizes.down("lg")]: {
       width: "25%",
@@ -24,7 +24,8 @@ const styles = {
     },
     [sizes.down("sm")]: {
       width: "100%",
-      height: "5%"
+      height: "5%",
+      paddingTop: "10px"
     }
   },
   boxContent: {
@@ -35,7 +36,7 @@ const styles = {
     padding: "10px",
     color: props =>
       chroma(props.color).luminance() <= 0.08
-        ? "rgba(255,255,255,0.8)"
+        ? "rgba(255,255,255,0.6)"
         : "rgba(0,0,0,0.6)",
     letterSpacing: "1px",
     textTransform: "uppercase",
@@ -44,7 +45,8 @@ const styles = {
     justifyContent: "space-between"
   },
   deleteIcon: {
-    transition: "all 0.3s ease-in-out"
+    transition: "all 0.3s ease-in-out",
+    marginRight: "10px"
   }
 };
 

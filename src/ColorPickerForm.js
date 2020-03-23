@@ -4,6 +4,7 @@ import { ChromePicker } from "react-color";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import styles from "./styles/ColorPickerFormStyles";
+import chroma from "chroma-js";
 
 class ColorPickerForm extends Component {
   constructor(props) {
@@ -83,7 +84,13 @@ class ColorPickerForm extends Component {
             color="primary"
             disabled={paletteFull}
             className={classes.addColor}
-            style={{ backgroundColor: paletteFull ? "grey" : currentColor }}
+            style={{
+              backgroundColor: paletteFull ? "grey" : currentColor,
+              color:
+                chroma(currentColor).luminance() <= 0.08
+                  ? "rgba(255,255,255,0.8)"
+                  : "rgba(0,0,0,0.8)"
+            }}
           >
             {paletteFull ? "Palette Full" : "Add Color"}
           </Button>
