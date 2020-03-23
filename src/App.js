@@ -17,6 +17,7 @@ class App extends Component {
     this.findPalette = this.findPalette.bind(this);
     this.savePalette = this.savePalette.bind(this);
     this.deletePalette = this.deletePalette.bind(this);
+    this.loadSeedPalettes = this.loadSeedPalettes.bind(this);
   }
   findPalette(id) {
     return this.state.palettes.find(function(palette) {
@@ -28,6 +29,15 @@ class App extends Component {
       st => ({ palettes: st.palettes.filter(palette => palette.id !== id) }),
       this.syncLocalStorage
     );
+  }
+  loadSeedPalettes() {
+    const newPaletteSet = [...this.state.palettes].concat(seedColors);
+    const uniquePaletteSet = Array.from(
+      new Set(newPaletteSet.map(a => a.id))
+    ).map(id => {
+      return newPaletteSet.find(a => a.id === id);
+    });
+    this.setState({ palettes: [...uniquePaletteSet] }, this.syncLocalStorage);
   }
   savePalette(newPalette) {
     this.setState(
@@ -85,6 +95,7 @@ class App extends Component {
                         palettes={palettes}
                         {...routeProps}
                         deletePalette={this.deletePalette}
+                        loadSeedPalettes={this.loadSeedPalettes}
                       />
                     </Page>
                   )}
