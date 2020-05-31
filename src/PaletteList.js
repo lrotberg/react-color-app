@@ -53,7 +53,9 @@ class PaletteList extends Component {
             <h1 className={classes.heading}>React Colors</h1>
             <div>
               <Button onClick={loadSeedPalettes}>Load Seed Palettes</Button>
-              <Link to="/palette/new">Create Palette</Link>
+              <Link component={Button} to="/palette/new">
+                Create Palette
+              </Link>
             </div>
           </nav>
           <TransitionGroup className={classes.palettes}>
