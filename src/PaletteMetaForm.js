@@ -22,10 +22,14 @@ class PaletteMetaForm extends Component {
   }
 
   componentDidMount() {
-    ValidatorForm.addValidationRule("isPaletteNameUnique", value =>
+    ValidatorForm.addValidationRule("isPaletteNameUnique", (value) =>
       this.props.palettes.every(
         ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
       )
+    );
+    ValidatorForm.addValidationRule(
+      "isPaletteNameNew",
+      (value) => value.toLowerCase() !== "new"
     );
   }
 
@@ -92,10 +96,15 @@ class PaletteMetaForm extends Component {
                 onChange={this.handleChange}
                 fullWidth
                 margin="normal"
-                validators={["required", "isPaletteNameUnique"]}
+                validators={[
+                  "required",
+                  "isPaletteNameUnique",
+                  "isPaletteNameNew"
+                ]}
                 errorMessages={[
                   "Palette name is required",
-                  "Palette name must be unique"
+                  "Palette name must be unique",
+                  'Palette name can\'t be "new"'
                 ]}
               />
             </DialogContent>
