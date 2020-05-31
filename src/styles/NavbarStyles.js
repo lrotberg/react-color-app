@@ -4,7 +4,7 @@ const styles = {
   Navbar: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex - start",
+    justifyContent: "flex-start",
     height: "6vh"
   },
   logo: {
@@ -34,7 +34,10 @@ const styles = {
   },
   selectContainer: {
     marginLeft: "auto",
-    marginRight: "1rem"
+    marginRight: "1rem",
+    "& span": {
+      marginRight: "0.5rem"
+    }
   }
 };
 

@@ -35,7 +35,7 @@ class Navbar extends Component {
         </div>
         {showingAllColors && (
           <div>
-            <span>level:{level}</span>
+            <span>Level: {level}</span>
             <div className={classes.slider}>
               <Slider
                 defaultValue={level}
@@ -68,10 +68,11 @@ class Navbar extends Component {
           </div>
         )}
         <div className={classes.selectContainer}>
+          <span>Format:</span>
           <Select value={format} onChange={this.handleFormatChange}>
-            <MenuItem value="hex">HEX - </MenuItem>
-            <MenuItem value="rgb">RGB - </MenuItem>
-            <MenuItem value="rgba">RGBA - </MenuItem>
+            <MenuItem value="hex">HEX</MenuItem>
+            <MenuItem value="rgb">RGB</MenuItem>
+            <MenuItem value="rgba">RGBA</MenuItem>
           </Select>
         </div>
         <Snackbar
