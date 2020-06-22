@@ -46,11 +46,15 @@ class PaletteList extends Component {
   render() {
     const { palettes, classes, loadSeedPalettes } = this.props;
     const { openDeleteDialog } = this.state;
+    const buildTime = process.env.DEPLOY_TIMESTAMP;
     return (
       <div className={classes.root}>
         <div className={classes.container}>
           <nav className={classes.nav}>
-            <h1 className={classes.heading}>React Colors</h1>
+            <div className={classes.logodeploy}>
+              <h1 className={classes.heading}>React Colors</h1>
+              <h6 className={classes.deploy}>Last deployed on: {buildTime}</h6>
+            </div>
             <div>
               <Button onClick={loadSeedPalettes}>Load Seed Palettes</Button>
               <Link component={Button} to="/palette/new">

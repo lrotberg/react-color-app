@@ -67,6 +67,14 @@ const styles = {
   },
   heading: {
     fontSize: "2rem"
+  },
+  logodeploy: {
+    display: "flex",
+    alignItems: "center"
+  },
+  deploy: {
+    marginLeft: "1rem",
+    paddingTop: "0.8rem"
   }
 };
 
