@@ -17,6 +17,7 @@ import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
 import MiniPalette from "./MiniPalette";
 import styles from "./styles/PaletteListStyles";
+import preval from "preval.macro";
 
 class PaletteList extends Component {
   constructor(props) {
@@ -46,14 +47,17 @@ class PaletteList extends Component {
   render() {
     const { palettes, classes, loadSeedPalettes } = this.props;
     const { openDeleteDialog } = this.state;
-    const buildTime = process.env.DEPLOY_TIMESTAMP;
     return (
       <div className={classes.root}>
         <div className={classes.container}>
           <nav className={classes.nav}>
             <div className={classes.logodeploy}>
               <h1 className={classes.heading}>React Colors</h1>
-              <h6 className={classes.deploy}>Last deployed on: {buildTime}</h6>
+              <h6 className={classes.deploy}>
+                Last deployed on:
+                {" " +
+                  preval`module.exports = new Date().toLocaleString('en-GB', {weekday: 'short', dateStyle:'medium', timeStyle:'short'});`}
+              </h6>
             </div>
             <div>
               <Button onClick={loadSeedPalettes}>Load Seed Palettes</Button>
