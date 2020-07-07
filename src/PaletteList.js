@@ -44,6 +44,8 @@ class PaletteList extends Component {
     this.props.deletePalette(this.state.deletingId);
     this.closeDialog();
   }
+  timeStamp = () =>
+    preval`module.exports = new Date().toLocaleString('en-GB', {weekday: 'short', dateStyle:'medium', timeStyle:'short'});`;
   render() {
     const { palettes, classes, loadSeedPalettes } = this.props;
     const { openDeleteDialog } = this.state;
@@ -55,8 +57,7 @@ class PaletteList extends Component {
               <h1 className={classes.heading}>React Colors</h1>
               <h6 className={classes.deploy}>
                 Last deployed on:
-                {" " +
-                  preval`module.exports = new Date().toLocaleString('en-GB', {weekday: 'short', dateStyle:'medium', timeStyle:'short'});`}
+                {` ${this.timeStamp()}`}
               </h6>
             </div>
             <div>
