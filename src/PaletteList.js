@@ -47,7 +47,7 @@ class PaletteList extends Component {
   timeStamp = () => {
     return preval`
     const dateFormat = require("dateformat");
-    module.exports = dateFormat(new Date(), "ddd mmm/dd/yyyy HH:MM TT 'GMT+3'");`;
+    module.exports = dateFormat(new Date(), "ddd mmm/dd/yyyy hh:MM TT");`;
   };
   render() {
     const { palettes, classes, loadSeedPalettes } = this.props;
