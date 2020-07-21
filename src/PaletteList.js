@@ -17,7 +17,7 @@ import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
 import MiniPalette from "./MiniPalette";
 import styles from "./styles/PaletteListStyles";
-import dateFormat from "dateformat";
+import preval from "preval.macro";
 
 class PaletteList extends Component {
   constructor(props) {
@@ -45,9 +45,9 @@ class PaletteList extends Component {
     this.closeDialog();
   }
   timeStamp = () => {
-    const now = new Date();
-    dateFormat.masks.formatted = `ddd mmm/dd/yyyy HH:MM TT "Israel Standard Time"`;
-    return dateFormat(now, "formatted");
+    return preval`
+    const dateFormat = require("dateformat");
+    module.exports = dateFormat(new Date(), "ddd mmm/dd/yyyy HH:MM TT 'GMT+3'");`;
   };
   render() {
     const { palettes, classes, loadSeedPalettes } = this.props;

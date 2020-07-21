@@ -18,6 +18,7 @@
     "chroma-js": "^2.1.0",
     "dateformat": "^3.0.3",
     "emoji-mart": "^3.0.0",
+    "preval.macro": "^5.0.0",
     "rc-slider": "^9.3.1",
     "react": "^16.13.1",
     "react-color": "^2.18.1",
