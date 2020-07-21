@@ -59,8 +59,7 @@ class PaletteList extends Component {
             <div className={classes.logodeploy}>
               <h1 className={classes.heading}>React Colors</h1>
               <h6 className={classes.deploy}>
-                Last deployed on:
-                {` ${this.timeStamp()}`}
+                {`Last deployed on:  ${this.timeStamp()}`}
               </h6>
             </div>
             <div>
