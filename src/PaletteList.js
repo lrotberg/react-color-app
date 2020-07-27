@@ -15,9 +15,10 @@ import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
+import preval from "preval.macro";
+import { version } from "../package.json";
 import MiniPalette from "./MiniPalette";
 import styles from "./styles/PaletteListStyles";
-import preval from "preval.macro";
 
 class PaletteList extends Component {
   constructor(props) {
@@ -59,7 +60,7 @@ class PaletteList extends Component {
             <div className={classes.logodeploy}>
               <h1 className={classes.heading}>React Colors</h1>
               <h6 className={classes.deploy}>
-                {`Last deployed on:  ${this.timeStamp()}`}
+                {`v${version} - deployed on: ${this.timeStamp()}`}
               </h6>
             </div>
             <div>
