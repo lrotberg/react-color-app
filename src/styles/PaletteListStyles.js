@@ -73,8 +73,15 @@ const styles = {
     alignItems: "center"
   },
   deploy: {
-    marginLeft: "1rem",
-    paddingTop: "0.8rem"
+    // marginLeft: "1rem",
+    // paddingTop: "0.8rem,"
+    color: "white",
+    marginTop: "0.5rem",
+    marginBottom: "0.8rem"
+  },
+  seedbutton: {
+    justifyContent: "center",
+    alignItems: "center"
   }
 };
 

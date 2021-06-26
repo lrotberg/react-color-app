@@ -59,17 +59,21 @@ class PaletteList extends Component {
           <nav className={classes.nav}>
             <div className={classes.logodeploy}>
               <h1 className={classes.heading}>React Colors</h1>
-              <h6 className={classes.deploy}>
-                {`v${version} - deployed on: ${this.timeStamp()}`}
-              </h6>
             </div>
             <div>
               <Button onClick={loadSeedPalettes}>Load Seed Palettes</Button>
-              <Link component={Button} to="/palette/new">
+              <Link
+                component={Button}
+                className={classes.seedbutton}
+                to="/palette/new"
+              >
                 Create Palette
               </Link>
             </div>
           </nav>
+          <h6 className={classes.deploy}>
+            {`v${version} - deployed on: ${this.timeStamp()}`}
+          </h6>
           <TransitionGroup className={classes.palettes}>
             {palettes.map(palette => (
               <CSSTransition key={palette.id} classNames="fade" timeout={500}>
