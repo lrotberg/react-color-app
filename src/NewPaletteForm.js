@@ -87,9 +87,14 @@ class NewPaletteForm extends Component {
     while (isDupColor) {
       rand = Math.floor(Math.random() * allColors.length);
       randomColor = allColors[rand];
-      isDupColor = this.state.colors.some(
-        color => color.name === randomColor.name
-      );
+      for (let color of this.state.colors) {
+        if (color.name === randomColor.name) {
+          isDupColor = true;
+          break;
+        } else {
+          isDupColor = false;
+        }
+      }
     }
     this.setState({
       colors: [...this.state.colors, randomColor]

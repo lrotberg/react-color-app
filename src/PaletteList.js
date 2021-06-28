@@ -62,13 +62,11 @@ class PaletteList extends Component {
             </div>
             <div>
               <Button onClick={loadSeedPalettes}>Load Seed Palettes</Button>
-              <Link
-                component={Button}
-                className={classes.seedbutton}
-                to="/palette/new"
-              >
-                Create Palette
-              </Link>
+              <Button>
+                <Link className={classes.seedbutton} to="/palette/new">
+                  Create Palette
+                </Link>
+              </Button>
             </div>
           </nav>
           <h6 className={classes.deploy}>

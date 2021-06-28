@@ -1,4 +1,4 @@
-export default {
+const styles = {
   root: {
     backgroundColor: "white",
     border: "1px solid black",
@@ -54,3 +54,5 @@ export default {
     transition: "all 0.3s ease-in-out"
   }
 };
+
+export default styles;

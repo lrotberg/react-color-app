@@ -1,10 +1,10 @@
 # TODO:
 
-- ### **`Critical:`** Fix warnings
-
 - ### **`Critical:`** Fix README
 
 - ### **`Moderate:`** Darkness level should return to last used level
+
+- ### **`Critical:`** ~~Fix warnings~~
 
 - ### **`Moderate:`** ~~Check deps updates~~
  
