@@ -2,8 +2,8 @@
   "name": "color-app",
   "version": "1.2.4",
   "engines": {
-    "node": "12.13.0",
-    "npm": "6.12.0"
+    "node": "14.17.0",
+    "npm": "6.14.13"
   },
   "private": true,
   "dependencies": {
@@ -13,13 +13,13 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
-    "acorn": "^8.1.0",
+    "acorn": "^8.4.1",
     "array-move": "^3.0.1",
-    "chroma-js": "^2.1.1",
+    "chroma-js": "^2.1.2",
     "dateformat": "^4.5.1",
     "emoji-mart": "^3.0.1",
     "preval.macro": "^5.0.0",
-    "rc-slider": "^9.7.1",
+    "rc-slider": "^9.7.2",
     "react": "^17.0.1",
     "react-color": "^2.19.3",
     "react-copy-to-clipboard": "^5.0.3",
@@ -29,7 +29,7 @@
     "react-scripts": "4.0.3",
     "react-sortable-hoc": "^1.11.0",
     "react-transition-group": "^4.4.1",
-    "serve": "^11.3.2"
+    "serve": "^12.0.0"
   },
   "scripts": {
     "start": "serve -s build",
