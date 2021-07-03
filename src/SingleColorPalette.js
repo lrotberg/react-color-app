@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import ColorBox from "./ColorBox";
@@ -6,14 +6,8 @@ import PaletteFooter from "./PaletteFooter";
 import styles from "./styles/PaletteStyles";
 import { withStyles } from "@material-ui/styles";
 
-class SingleColorPalette extends Component {
-  constructor(props) {
-    super(props);
-    this._shades = this.gatherShades(this.props.palette, this.props.colorId);
-    this.state = { format: "hex" };
-    this.changeFormat = this.changeFormat.bind(this);
-  }
-  gatherShades(palette, colorToFilterBy) {
+const SingleColorPalette = props => {
+  const gatherShades = (palette, colorToFilterBy) => {
     let shades = [];
     let allColors = palette.colors;
 
@@ -23,35 +17,37 @@ class SingleColorPalette extends Component {
       );
     }
     return shades.slice(1);
-  }
-  changeFormat(val) {
-    this.setState({ format: val });
-  }
-  render() {
-    const { format } = this.state;
-    const { classes } = this.props;
-    const { paletteName, emoji, id } = this.props.palette;
-    const colorBoxes = this._shades.map(color => (
-      <ColorBox
-        key={color.name}
-        name={color.name}
-        background={color[format]}
-        showingFullPalette={false}
-      />
-    ));
-    return (
-      <div className={classes.Palette}>
-        <Navbar handleChange={this.changeFormat} showingAllColors={false} />
-        <div className={classes.colors}>
-          {colorBoxes}
-          <div className={classes.goBack}>
-            <Link to={`/palette/${id}`}>GO BACK</Link>
-          </div>
+  };
+
+  const changeFormat = val => {
+    setFormat(val);
+  };
+
+  const { classes, palette, colorId } = props;
+  const { paletteName, emoji, id } = palette;
+  const [format, setFormat] = useState("hex");
+  const _shades = gatherShades(palette, colorId);
+  const colorBoxes = _shades.map(color => (
+    <ColorBox
+      key={color.name}
+      name={color.name}
+      background={color[format]}
+      showingFullPalette={false}
+    />
+  ));
+
+  return (
+    <div className={classes.Palette}>
+      <Navbar handleChange={changeFormat} showingAllColors={false} />
+      <div className={classes.colors}>
+        {colorBoxes}
+        <div className={classes.goBack}>
+          <Link to={`/palette/${id}`}>GO BACK</Link>
         </div>
-        <PaletteFooter paletteName={paletteName} emoji={emoji} />
       </div>
-    );
-  }
-}
+      <PaletteFooter paletteName={paletteName} emoji={emoji} />
+    </div>
+  );
+};
 
 export default withStyles(styles)(SingleColorPalette);
