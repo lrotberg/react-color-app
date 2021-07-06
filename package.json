@@ -1,6 +1,6 @@
 {
   "name": "color-app",
-  "version": "1.4.6",
+  "version": "1.5.7",
   "engines": {
     "node": "14.17.0",
     "npm": "6.14.13"
